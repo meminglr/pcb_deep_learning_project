@@ -22,9 +22,6 @@ pcb_deep_learning_project/
 │               ├── Normal/            # ~1004 .JPG Görüntü (Etiket: 0)
 │               └── Anomaly/           # ~100 .JPG Görüntü (Etiket: 1)
 ├── pcb_anomaly_detection.ipynb        # Ana Jupyter Notebook (Eğitim, Analiz, Test)
-├── pcb_anomaly_detection_report.md     # Akademik Markdown Teknik Raporu
-├── pcb_anomaly_detection_report.docx   # Derlenmiş MS Word Raporu (Times New Roman, Türkçe tr-TR)
-├── convert_report.py                  # LaTeX & Alt Simge Destekli Akademik Word Derleyici Script
 ├── requirements.txt                   # Bağımlı Python Kütüphaneleri Listesi
 ├── setup_env.sh                       # Otomatik Sanal Ortam Kurulum Betiği
 ├── best_cnn.pth                       # CustomCNN En İyi Model Ağırlıkları
@@ -137,24 +134,6 @@ source venv/bin/activate
 jupyter notebook pcb_anomaly_detection.ipynb
 ```
 *Notebook açıldığında üst menüden Kernel çekirdeğini **Python (venv)** olarak seçin.*
-
----
-
-## Akademik Word Raporu Derleme (Compiler)
-
-Bu repoda, hazırlanan detaylı teknik Markdown raporunu akademik standartlarda Microsoft Word (`.docx`) formatına çeviren gelişmiş bir parser (`convert_report.py`) yer almaktadır.
-
-### Rapor Derleyici Özellikleri:
-* **Akademik Tipografi:** Tüm başlıklar, düz paragraflar ve tablolar **Times New Roman** yazı tipine dönüştürülür. Paragraflar akademik kurallara uygun olarak sola yaslanır.
-* **Yerel Dil Desteği (`tr-TR`):** Word XML kod yapısına Türkçe dil etiketi gömülerek Microsoft Word'ün Türkçe yazım denetimi yapması sağlanır ve **kırmızı dalgalı yazım hatası çizgileri tamamen temizlenir**.
-* **LaTeX Denklem Parser'ı:** Belgedeki matematiksel denklemler ($\frac{A}{B}$, $\sqrt{A}$, $A \to B$) native Unicode karakterlere ve alt simge (subscript) biçimlendirmelerine otomatik olarak dönüştürülür.
-* **Görsel Çağrı Kutuları (Callout Boxes):** Belgedeki görsel yer tutucuları, "Altın Sarısı" renkte kalın sol kenarlıklı özel kutulara dönüştürülerek kullanıcıların Jupyter Notebook grafiklerini nereye eklemeleri gerektiğini belirtir.
-
-### Raporu Derlemek İçin:
-```bash
-python convert_report.py
-```
-Komut çalıştırıldıktan sonra, en güncel Markdown içeriği işlenerek akademik standartlara tam uyumlu olan `pcb_anomaly_detection_report.docx` dosyası saniyeler içinde otomatik olarak üretilir.
 
 ---
 
